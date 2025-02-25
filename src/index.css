@@ -12,6 +12,22 @@ body {
 
 /* HEADER */
 
+/* MAIN */
+main {
+  min-height: 70vh;
+}
+
+/* FOOTER */
+
+footer li {
+  transition: 0.4s;
+}
+
+footer li:hover {
+  transform: scale(1.2);
+  transition: 0.4s;
+}
+
 .under-costruction__btn {
   background-color: #600e0e;
   padding: 0.625rem 0.875rem;
