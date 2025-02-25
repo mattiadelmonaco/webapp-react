@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container">
         <div className="flex justify-between">
           <Link to="/">
-            <img className="h-25" src="/logo-webapp.svg" alt="logo 138movies" />
+            <img className="h-23" src="/logo-webapp.svg" alt="logo 138movies" />
           </Link>
           <SocialBtnRightFooter />
         </div>

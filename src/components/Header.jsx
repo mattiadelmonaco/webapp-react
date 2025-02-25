@@ -6,7 +6,7 @@ export default function Header() {
       <div className="container">
         <div className="flex justify-between text-white items-center">
           <Link to="/">
-            <img className="h-25" src="/logo-webapp.svg" alt="logo 138movies" />
+            <img className="h-23" src="/logo-webapp.svg" alt="logo 138movies" />
           </Link>
           <h1 className="font-extrabold text-4xl">BENVENUTO SU 138movies</h1>
           <ul>
