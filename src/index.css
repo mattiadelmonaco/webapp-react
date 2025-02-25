@@ -33,8 +33,18 @@ body {
 /* HEADER */
 
 /* MAIN */
+
 main {
   min-height: 100vh;
+}
+
+.ms-btn-info {
+  transition: 0.4s;
+}
+
+.ms-btn-info:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
 }
 
 /* FOOTER */
