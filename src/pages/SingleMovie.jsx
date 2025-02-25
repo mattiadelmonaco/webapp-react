@@ -21,7 +21,7 @@ export default function SingleMovie() {
       });
   };
 
-  useEffect(fetchMovie, [id]);
+  useEffect(fetchMovie, [id, navigate]);
 
   return (
     <section>
