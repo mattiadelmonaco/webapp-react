@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+.under-costruction__btn {
+  background-color: #600e0e;
+  padding: 0.625rem 0.875rem;
+  font-size: 1.25rem;
+  border-radius: 0.9375rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-self: center;
+  margin-top: 1.25rem;
+  transition: 0.4s;
+}
+
+.under-costruction__btn:hover {
+  background-color: #3d0b0b;
+  color: rgb(254, 239, 167);
+  border-radius: 0.9375rem;
+  transform: scale(1.1);
+  transition: 0.4s;
+}
