@@ -2,15 +2,21 @@ import { Link } from "react-router";
 
 export default function MoviesListComp({ moviesList }) {
   return (
-    <ul className="grid grid-cols-3 gap-10 my-10">
+    <ul className="grid grid-cols-4 gap-5 my-10 mx-5">
       {moviesList.map((movie) => {
         return (
           <li
             key={movie.id}
-            className="space-y-1 bg-white p-5 rounded-2xl shadow-2xl shadow-yellow-700"
+            className="space-y-1 bg-white p-5 rounded-2xl shadow-2xl shadow-yellow-700 max-w-[300px]"
           >
             {movie.image ? (
-              <img src={movie.img} alt={movie.title} />
+              <div className="h-[350px] w-[240px] object-cover flex justify-self-center mb-2">
+                <img
+                  className="h-full w-full rounded-2xl"
+                  src={movie.image}
+                  alt={movie.title}
+                />
+              </div>
             ) : (
               <div className="flex justify-center">
                 <i className="fa-solid fa-image text-7xl text-black"></i>
@@ -19,7 +25,7 @@ export default function MoviesListComp({ moviesList }) {
             <h2 className="text-center text-2xl font-extrabold">
               {movie.title}
             </h2>
-            <div className="mt-5">
+            <div className="mt-3 space-y-2">
               <h3>
                 <strong>Media dei voti: </strong>
                 {movie.average_vote}
@@ -36,7 +42,7 @@ export default function MoviesListComp({ moviesList }) {
                 <strong>Genere: </strong>
                 {movie.genre}
               </h3>
-              <p className="h-30">
+              <p className="h-25">
                 <strong>Trama: </strong>
                 {movie.abstract}
               </p>
