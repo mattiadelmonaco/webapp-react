@@ -33,7 +33,7 @@ export default function SingleMovie() {
     <section>
       <Link
         to="/"
-        className="bg-white rounded-full inline px-3 text-2xl relative top-5 left-10"
+        className="bg-white rounded-full inline px-3 text-2xl relative top-5 left-5"
       >
         <i className="fa-solid fa-left-long"></i>
       </Link>
