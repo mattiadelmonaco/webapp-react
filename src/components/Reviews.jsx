@@ -1,3 +1,5 @@
+import VoteInStars from "./voteInStars";
+
 export default function Reviews({ reviews }) {
   return (
     <div className="bg-white rounded-2xl my-10">
@@ -14,7 +16,7 @@ export default function Reviews({ reviews }) {
               </h3>
               <h3>
                 <strong>Voto: </strong>
-                {review.vote}
+                <VoteInStars vote={review.vote} />
               </h3>
               <p>
                 <strong>Recensione: </strong>

@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import VoteInStars from "./voteInStars";
 
 export default function MoviesListComp({ moviesList }) {
   return (
@@ -26,9 +27,9 @@ export default function MoviesListComp({ moviesList }) {
               {movie.title}
             </h2>
             <div className="mt-3 space-y-2">
-              <h3>
+              <h3 className="flex gap-1">
                 <strong>Media dei voti: </strong>
-                {movie.average_vote}
+                <VoteInStars vote={movie.average_vote} />
               </h3>
               <h3>
                 <strong>Regista: </strong>

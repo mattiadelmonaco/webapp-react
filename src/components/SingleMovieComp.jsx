@@ -1,3 +1,5 @@
+import VoteInStars from "./voteInStars";
+
 export default function SingleMovieComp({ movie }) {
   return (
     <div className="bg-white rounded-2xl mt-10">
@@ -17,9 +19,10 @@ export default function SingleMovieComp({ movie }) {
         )}
         <div className="space-y-5 text-xl col-span-8">
           <h2 className="text-4xl font-extrabold mb-5">{movie.title}</h2>
-          <h3>
+          <h3 className="flex gap-3">
             <strong>Media dei voti: </strong>
-            {movie.average_vote}
+            <VoteInStars vote={movie.average_vote} />
+            {`(${movie.average_vote})`}
           </h3>
           <h3>
             <strong>Regista: </strong>
