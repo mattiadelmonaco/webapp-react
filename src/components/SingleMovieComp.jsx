@@ -5,7 +5,7 @@ export default function SingleMovieComp({ movie }) {
     <div className="bg-white rounded-2xl mt-10 mx-5">
       <div className="grid grid-cols-12 p-6">
         {movie.image ? (
-          <div className="max-h-[500px] max-w-[350px] col-span-12 md:col-span-6 lg:col-span-4 justify-self-center mb-5 md:mb-0">
+          <div className="max-h-[500px] max-w-[350px] col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 justify-self-center mb-5 md:mb-0">
             <img
               className="h-full w-full rounded-2xl"
               src={movie.image}
@@ -17,9 +17,9 @@ export default function SingleMovieComp({ movie }) {
             <i className="fa-solid fa-image text-9xl text-black"></i>
           </div>
         )}
-        <div className="space-y-2 sm:space-y-5 text-xl col-span-12 md:col-span-6 lg:col-span-8 ml-3">
+        <div className="space-y-2 sm:space-y-5 text-xl col-span-12 sm:col-span-4 md:col-span-6 lg:col-span-8 ml-3">
           <h2 className="text-4xl font-extrabold mb-5">{movie.title}</h2>
-          <h3 className="flex flex-col sm:flex-row gap-3">
+          <h3 className="flex flex-col md:flex-row gap-3">
             <strong>Media dei voti: </strong>
             <VoteInStars vote={movie.average_vote} />
             {`(${movie.average_vote})`}
@@ -36,7 +36,7 @@ export default function SingleMovieComp({ movie }) {
             <strong>Genere: </strong>
             {movie.genre}
           </h3>
-          <p className="h-30 flex flex-col">
+          <p className="h-30 flex flex-col overflow-auto">
             <strong>Trama: </strong>
             {movie.abstract}
           </p>
