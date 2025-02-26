@@ -5,7 +5,7 @@ export default function SingleMovieComp({ movie }) {
     <div className="bg-white rounded-2xl mt-10 mx-5">
       <div className="grid grid-cols-12 p-6">
         {movie.image ? (
-          <div className="max-h-[500px] max-w-[350px] col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 justify-self-center mb-5 md:mb-0">
+          <div className="max-h-[500px] max-w-[350px] col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 justify-self-center sm:justify-self-start mb-5 md:mb-0">
             <img
               className="h-full w-full rounded-2xl"
               src={movie.image}
