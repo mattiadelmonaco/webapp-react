@@ -1,7 +1,7 @@
 export default function SocialBtnRightFooter() {
   return (
-    <ul className="flex gap-3 items-center text-white text-2xl">
-      <h2 className="text-xl font-semibold">SEGUICI</h2>
+    <ul className="flex gap-3 items-center text-white text-2xl pr-3">
+      <h2 className="hidden sm:block text-xl font-semibold">SEGUICI</h2>
       <li>
         <a href="#">
           <i className="fa-brands fa-facebook"></i>

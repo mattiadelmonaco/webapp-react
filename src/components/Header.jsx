@@ -8,9 +8,11 @@ export default function Header() {
           <Link to="/">
             <img className="h-23" src="/logo-webapp.svg" alt="logo 138movies" />
           </Link>
-          <h1 className="font-extrabold text-4xl">BENVENUTO SU 138movies</h1>
+          <h1 className="font-extrabold text-center text-[16px] sm:text-3xl md:text-4xl">
+            BENVENUTO SU 138movies
+          </h1>
           <ul>
-            <li>
+            <li className="pr-3 text-xs sm:text-sm">
               <Link to="/"> HomePage</Link>
             </li>
           </ul>
