@@ -5,7 +5,10 @@ export default function Reviews({ reviews }) {
       <ul className="p-5">
         {reviews.map((review) => {
           return (
-            <li key={review.id}>
+            <li
+              key={review.id}
+              className="border-b-2 border-neutral-200 pb-2 pt-5"
+            >
               <h3>
                 <strong>{review.name}</strong>
               </h3>
@@ -17,7 +20,6 @@ export default function Reviews({ reviews }) {
                 <strong>Recensione: </strong>
                 {review.text}
               </p>
-              <hr className="mb-8 mt-3" />
             </li>
           );
         })}
