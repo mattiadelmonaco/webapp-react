@@ -14,7 +14,7 @@ export default function Reviews({ reviews }) {
               <h3>
                 <strong>{review.name}</strong>
               </h3>
-              <h3>
+              <h3 className="flex gap-2">
                 <strong>Voto: </strong>
                 <VoteInStars vote={review.vote} />
               </h3>
