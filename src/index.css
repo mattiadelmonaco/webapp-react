@@ -23,7 +23,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #e2cb4a, #cca700);
-  border-radius: 10px;
+  border-top-right-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {

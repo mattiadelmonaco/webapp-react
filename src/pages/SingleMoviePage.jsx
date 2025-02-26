@@ -31,11 +31,13 @@ export default function SingleMovie() {
 
   return (
     <section>
-      <div className="bg-white rounded-full inline px-3 text-2xl relative top-5 left-10">
-        <Link to="/">
-          <i className="fa-solid fa-left-long"></i>
-        </Link>
-      </div>
+      <Link
+        to="/"
+        className="bg-white rounded-full inline px-3 text-2xl relative top-5 left-10"
+      >
+        <i className="fa-solid fa-left-long"></i>
+      </Link>
+
       <div className="container">
         <SingleMovieComp movie={movie} />
 
