@@ -35,8 +35,9 @@ export default function AddReview() {
             name="review"
             id="review"
             rows={3}
+            placeholder="Inserisci qui la tua recensione"
             required
-            className="border border-amber-200 w-[80%] rounded-lg px-3 py-1"
+            className="border border-amber-200 w-[80%] rounded-lg px-3 py-1 mt-1.5"
           ></textarea>
         </div>
         <button
