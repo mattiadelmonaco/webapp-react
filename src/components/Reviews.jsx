@@ -29,9 +29,6 @@ export default function Reviews({ reviews }) {
           })}
         </ul>
       </div>
-      <div className="ms-btn-info flex justify-self-center bg-white text-center text-lg font-bold rounded-xl px-4 py-2 mt-1 mb-4">
-        <Link to="#">Lascia la tua recensione</Link>
-      </div>
     </>
   );
 }

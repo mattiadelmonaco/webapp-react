@@ -48,6 +48,16 @@ main {
   transition: 0.4s;
 }
 
+/* MODAL */
+.ms-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #000000bb;
+}
+
 /* FOOTER */
 
 footer li {

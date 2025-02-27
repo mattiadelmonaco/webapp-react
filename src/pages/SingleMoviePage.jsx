@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 import SingleMovieComp from "../components/SingleMovieComp";
 import Reviews from "../components/Reviews";
+import AddReview from "../components/AddReview";
 
 export default function SingleMovie() {
   const { id } = useParams();
@@ -42,6 +43,7 @@ export default function SingleMovie() {
         <SingleMovieComp movie={movie} />
 
         <Reviews reviews={reviews} />
+        <AddReview />
       </div>
     </section>
   );
