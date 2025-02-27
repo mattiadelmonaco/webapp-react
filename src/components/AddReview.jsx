@@ -17,7 +17,7 @@ export default function AddReview() {
             />
           </div>
           <div className="flex items-center gap-3">
-            <label htmlFor="vote">Voto:</label>
+            <label htmlFor="vote">Voto (max 5):</label>
             <input
               type="number"
               id="vote"
