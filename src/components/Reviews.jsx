@@ -1,31 +1,37 @@
 import VoteInStars from "./voteInStars";
+import { Link } from "react-router";
 
 export default function Reviews({ reviews }) {
   return (
-    <div className="bg-white rounded-2xl my-10 mx-5">
-      <h2 className="font-extrabold text-4xl text-center pt-5">Recensioni</h2>
-      <ul className="p-5">
-        {reviews.map((review) => {
-          return (
-            <li
-              key={review.id}
-              className="border-b-2 border-neutral-200 pb-2 pt-5"
-            >
-              <h3>
-                <strong>{review.name}</strong>
-              </h3>
-              <h3 className="flex gap-2">
-                <strong>Voto: </strong>
-                <VoteInStars vote={review.vote} />
-              </h3>
-              <p>
-                <strong>Recensione: </strong>
-                {review.text}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <div className="bg-white rounded-2xl mt-10 mb-5 mx-5">
+        <h2 className="font-extrabold text-4xl text-center pt-5">Recensioni</h2>
+        <ul className="p-5">
+          {reviews.map((review) => {
+            return (
+              <li
+                key={review.id}
+                className="border-b-2 border-neutral-200 pb-2 pt-5"
+              >
+                <h3>
+                  <strong>{review.name}</strong>
+                </h3>
+                <h3 className="flex gap-2">
+                  <strong>Voto: </strong>
+                  <VoteInStars vote={review.vote} />
+                </h3>
+                <p>
+                  <strong>Recensione: </strong>
+                  {review.text}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="ms-btn-info flex justify-self-center bg-white text-center text-lg font-bold rounded-xl px-4 py-2 mt-1 mb-4">
+        <Link to="#">Lascia la tua recensione</Link>
+      </div>
+    </>
   );
 }

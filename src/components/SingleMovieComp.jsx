@@ -21,8 +21,10 @@ export default function SingleMovieComp({ movie }) {
           <h2 className="text-4xl font-extrabold mb-5">{movie.title}</h2>
           <h3 className="flex flex-col md:flex-row gap-3">
             <strong>Media dei voti: </strong>
-            <VoteInStars vote={movie.average_vote} />
-            {`(${movie.average_vote})`}
+            <div className="flex gap-2">
+              <VoteInStars vote={movie.average_vote} />
+              {`(${movie.average_vote})`}
+            </div>
           </h3>
           <h3 className="flex flex-col">
             <strong>Regista: </strong>
