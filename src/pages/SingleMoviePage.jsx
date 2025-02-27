@@ -43,7 +43,7 @@ export default function SingleMovie() {
         <SingleMovieComp movie={movie} />
 
         <Reviews reviews={reviews} />
-        <AddReview />
+        <AddReview fetchMovie={fetchMovie} />
       </div>
     </section>
   );
