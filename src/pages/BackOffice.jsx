@@ -1,43 +1,15 @@
+import AddMovie from "../components/AddMovie";
 import { useState } from "react";
-import axios from "../api/axios";
-
-const initialData = {
-  title: "",
-  director: "",
-  genre: "",
-  release_year: "",
-  abstract: "",
-  image: undefined,
-};
 
 export default function BackOffice() {
-  const [formData, setFormData] = useState(initialData);
+  const [formAddMovie, setFormAddMovie] = useState(false);
 
-  const handleField = (fieldName, fieldValue) => {
-    setFormData((currentFormData) => {
-      return {
-        ...currentFormData,
-        [fieldName]: fieldValue,
-      };
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    axios
-      .post("/movies", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then(() => {
-        setFormData(initialData);
-      });
+  const openAddMovie = () => {
+    setFormAddMovie(!formAddMovie);
   };
 
   return (
-    <div className=" grid grid-cols-12 gap-x-4 mt-10">
+    <div className=" grid grid-cols-12 gap-x-4 mt-10 h-screen mb-10">
       <div className="col-span-4 sm:col-span-3 p-4 bg-white rounded-tr-2xl rounded-br-2xl">
         <div className="space-y-2">
           <h2 className="text-md sm:text-xl font-extrabold bg-amber-300 rounded-sm px-3 py-1">
@@ -46,95 +18,19 @@ export default function BackOffice() {
           <button
             type="button"
             className="ms-btn-info flex justify-self-center text-xs sm:text-lg text-white font-bold bg-blue-400 rounded-xl px-2 py-0.5 cursor-pointer"
+            onClick={openAddMovie}
           >
             Aggiungi film
           </button>
         </div>
       </div>
       <div className="col-span-8 sm:col-span-9 p-3 bg-white rounded-tl-2xl rounded-bl-2xl">
-        <form className="space-y-3" onSubmit={handleSubmit}>
-          <div className="flex flex-col items-center">
-            <label htmlFor="title">Titolo:</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              required
-              className="border border-amber-200 rounded-lg text-center py-0.5 px-2"
-              value={formData.title}
-              onChange={(e) => handleField("title", e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col items-center">
-            <label htmlFor="director">Regista:</label>
-            <input
-              type="text"
-              id="director"
-              name="director"
-              required
-              className="border border-amber-200 rounded-lg text-center py-0.5 px-2"
-              value={formData.director}
-              onChange={(e) => handleField("director", e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col items-center">
-            <label htmlFor="genre">Genere:</label>
-            <input
-              type="text"
-              id="genre"
-              name="genre"
-              required
-              className="border border-amber-200 rounded-lg text-center py-0.5 px-2"
-              value={formData.genre}
-              onChange={(e) => handleField("genre", e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col items-center">
-            <label htmlFor="release_year">Data di uscita:</label>
-            <input
-              type="number"
-              id="release_year"
-              name="release_year"
-              required
-              className="border border-amber-200 rounded-lg text-center py-0.5 px-2"
-              value={formData.release_year}
-              onChange={(e) => handleField("release_year", e.target.value)}
-            />
-          </div>
-
-          <div className="flex flex-col items-center">
-            <label htmlFor="abstract">Trama:</label>
-            <textarea
-              name="abstract"
-              id="abstract"
-              rows={3}
-              placeholder="Inserisci qui la trama"
-              required
-              className="border border-amber-200 w-[80%] rounded-lg px-3 py-1 mt-1.5"
-              value={formData.abstract}
-              onChange={(e) => handleField("abstract", e.target.value)}
-            ></textarea>
-          </div>
-          <div className="flex flex-col items-center">
-            <label htmlFor="image">Seleziona immagine copertina:</label>
-            <input
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              required
-              className="border border-amber-200 rounded-lg text-center py-0.5 px-2 w-[70%]"
-              onChange={(e) => handleField("image", e.target.files[0])}
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="ms-btn-info flex justify-self-center bg-amber-300 text-center text-lg rounded-xl px-3 py-1 cursor-pointer"
-          >
-            Aggiungi film
-          </button>
-        </form>
+        {!formAddMovie && (
+          <h2 className="text-center font-extrabold text-xl sm:text-4xl md:text-5xl text-amber-400">
+            IL TUO BACKOFFICE
+          </h2>
+        )}
+        {formAddMovie && <AddMovie />}
       </div>
     </div>
   );
