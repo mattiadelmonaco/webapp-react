@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export default function Header() {
   return (
@@ -13,10 +13,10 @@ export default function Header() {
           </h1>
           <ul className="space-y-1">
             <li className="mr-3 text-xs sm:text-sm bg-amber-300 px-1 py-0.5 rounded-md text-black font-bold">
-              <Link to="/">HomePage</Link>
+              <NavLink to="/">HomePage</NavLink>
             </li>
             <li className="mr-3 text-xs sm:text-sm bg-amber-300 px-1 py-0.5 rounded-md text-black font-bold">
-              <Link to="/back-office">BackOffice</Link>
+              <NavLink to="/back-office">BackOffice</NavLink>
             </li>
           </ul>
         </div>

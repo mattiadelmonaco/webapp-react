@@ -6,6 +6,11 @@ export default function Reviews({ reviews }) {
     <>
       <div className="bg-white rounded-2xl mt-10 mb-5 mx-5">
         <h2 className="font-extrabold text-4xl text-center pt-5">Recensioni</h2>
+        {reviews.length <= 0 && (
+          <h2 className="text-center font-bold mt-3">
+            Ancora nessun recensione, puoi essere il primo!
+          </h2>
+        )}
         <ul className="p-5">
           {reviews.map((review) => {
             return (

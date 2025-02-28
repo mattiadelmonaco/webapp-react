@@ -36,14 +36,14 @@ export default function MoviesListComp({ moviesList }) {
                 {movie.director}
               </h3>
               <h3>
-                <strong>Data di uscita: </strong>
+                <strong>Anno di uscita: </strong>
                 {movie.release_year}
               </h3>
               <h3>
                 <strong>Genere: </strong>
                 {movie.genre}
               </h3>
-              <p className="h-25">
+              <p className="h-25 overflow-auto">
                 <strong>Trama: </strong>
                 {movie.abstract}
               </p>

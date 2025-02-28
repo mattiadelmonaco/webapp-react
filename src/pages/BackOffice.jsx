@@ -107,10 +107,10 @@ export default function BackOffice() {
               type="file"
               id="image"
               name="image"
+              accept="image/*"
               required
-              className="border border-amber-200 rounded-lg text-center py-0.5 px-2 w-full"
-              value={formData.image}
-              onChange={(e) => handleField("image", e.target.value)}
+              className="border border-amber-200 rounded-lg text-center py-0.5 px-2 w-[70%]"
+              onChange={(e) => handleField("image", e.target.files)}
             />
           </div>
 

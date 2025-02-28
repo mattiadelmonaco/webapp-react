@@ -31,7 +31,7 @@ export default function SingleMovieComp({ movie }) {
             {movie.director}
           </h3>
           <h3 className="flex flex-col">
-            <strong>Data di uscita: </strong>
+            <strong>Anno di uscita: </strong>
             {movie.release_year}
           </h3>
           <h3 className="flex flex-col">
