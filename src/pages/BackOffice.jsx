@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { useParams } from "react-router";
+import axios from "../api/axios";
 
 const initialData = {
   title: "",
   director: "",
   genre: "",
-  release: "",
+  release_year: undefined,
   abstract: "",
-  image: "",
+  image: undefined,
 };
 
 export default function BackOffice() {
@@ -20,6 +20,20 @@ export default function BackOffice() {
         [fieldName]: fieldValue,
       };
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("/movies", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(() => {
+        setFormData(initialData);
+      });
   };
 
   return (
@@ -38,7 +52,7 @@ export default function BackOffice() {
         </div>
       </div>
       <div className="col-span-8 sm:col-span-9 p-3 bg-white rounded-tl-2xl rounded-bl-2xl">
-        <form className="space-y-3">
+        <form className="space-y-3" onSubmit={handleSubmit}>
           <div className="flex flex-col items-center">
             <label htmlFor="title">Titolo:</label>
             <input
@@ -76,15 +90,15 @@ export default function BackOffice() {
             />
           </div>
           <div className="flex flex-col items-center">
-            <label htmlFor="release">Data di uscita:</label>
+            <label htmlFor="release_year">Data di uscita:</label>
             <input
-              type="date"
-              id="release"
-              name="release"
+              type="number"
+              id="release_year"
+              name="release_year"
               required
               className="border border-amber-200 rounded-lg text-center py-0.5 px-2"
-              value={formData.date}
-              onChange={(e) => handleField("release", e.target.value)}
+              value={formData.release_year}
+              onChange={(e) => handleField("release_year", e.target.value)}
             />
           </div>
 
@@ -110,7 +124,7 @@ export default function BackOffice() {
               accept="image/*"
               required
               className="border border-amber-200 rounded-lg text-center py-0.5 px-2 w-[70%]"
-              onChange={(e) => handleField("image", e.target.files)}
+              onChange={(e) => handleField("image", e.target.files[0])}
             />
           </div>
 
