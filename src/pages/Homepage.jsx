@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import axios from "../api/axios";
 import { useNavigate } from "react-router";
 import MoviesListComp from "../components/MoviesListComp";
+import { useLoaderContext } from "../context/LoaderContext";
 
 export default function Homepage() {
   const navigate = useNavigate();
 
   const [moviesList, setMoviesList] = useState([]);
 
+  const { setIsLoading } = useLoaderContext();
+
   const fetchMoviesList = () => {
+    setIsLoading(true);
     axios
       .get("/movies")
       .then((res) => {
@@ -18,7 +22,8 @@ export default function Homepage() {
         if (err.status === 404) {
           navigate("/404");
         }
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   useEffect(fetchMoviesList, []);

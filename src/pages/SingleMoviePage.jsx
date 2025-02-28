@@ -6,11 +6,13 @@ import { Link } from "react-router";
 import SingleMovieComp from "../components/SingleMovieComp";
 import Reviews from "../components/Reviews";
 import AddReview from "../components/AddReview";
+import { useLoaderContext } from "../context/LoaderContext";
 
 export default function SingleMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const [reviews, setReviews] = useState([]);
+  const { isLoading, setIsLoading } = useLoaderContext();
 
   const navigate = useNavigate();
 
@@ -25,7 +27,8 @@ export default function SingleMovie() {
         if (err.status === 404) {
           navigate("/404");
         }
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   useEffect(fetchMovie, [id, navigate]);
