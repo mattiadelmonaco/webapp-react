@@ -5,7 +5,7 @@ const initialData = {
   title: "",
   director: "",
   genre: "",
-  release_year: undefined,
+  release_year: "",
   abstract: "",
   image: undefined,
 };
