@@ -23,7 +23,7 @@ export default function SingleMovieComp({ movie }) {
             <strong>Media dei voti: </strong>
             <div className="flex gap-2">
               <VoteInStars vote={movie.average_vote} />
-              {`(${movie.average_vote})`}
+              {movie.average_vote ? `(${movie.average_vote})` : 0}
             </div>
           </h3>
           <h3 className="flex flex-col">

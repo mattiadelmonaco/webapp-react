@@ -1,5 +1,4 @@
 import VoteInStars from "./voteInStars";
-import { Link } from "react-router";
 
 export default function Reviews({ reviews }) {
   return (
